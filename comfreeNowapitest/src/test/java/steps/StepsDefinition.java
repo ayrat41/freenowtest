@@ -23,7 +23,7 @@ public class StepsDefinition extends Util {
         String api = Util.prop.getProperty("usersUri");
         String endPointUri = url+api;
         System.out.println(endPointUri);
-        String name = Util.prop.getProperty("name");
+        String name = Util.prop.getProperty("username");
         response = RestAssured.given().get(endPointUri);
         response.then().assertThat().statusCode(200);
         JsonPath jsonPathEvaluator = response.jsonPath();
