@@ -8,7 +8,7 @@ jobs:
     docker:
       - image: circleci/openjdk:8-jdk
 
-    working_directory: ~/comfreeNowapitest
+    working_directory: ~/
     steps:
       - checkout
 
@@ -19,7 +19,7 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - comfreeNowapitest-
 
-      - run: pwd; cd /testChallenge/comfreeNowapitest; mvn dependency:go-offline
+      - run: pwd; ls -la; cd /comfreeNowapitest; mvn dependency:go-offline
 
       - save_cache:
           paths:
