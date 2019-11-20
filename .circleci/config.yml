@@ -8,8 +8,28 @@ jobs:
     docker:
       - image: circleci/openjdk:8-jdk
 
-    working_directory: /Users/aaibedul/eclipse-workspace/testChallenge/comfreeNowapitest/
+    working_directory: ~testChallenge/comfreeNowapitest
     steps:
       - checkout
-      # run tests!
+          steps:
+      - checkout
+      - run: cd     steps:
+      - checkout
+      - run: cd /Users/aaibedul/eclipse-workspace/testChallenge/comfreeNowapitest; ls -la; pwd;
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - comfreeNowapitest-{{ checksum "pom.xml" }}
+          # fallback to using the latest cache if no exact match is found
+          - comfreeNowapitest-
+
+      - run: cd /Users/aaibedul/eclipse-workspace/testChallenge/comfreeNowapitest; mvn dependency:go-offline
+
+      - save_cache:
+          paths:
+            - ~/Users/aaibedul/.m2
+          key: comfreeNowapitest-{{ checksum "pom.xml" }}
+
+# run tests!
       - run: mvn -Dtest=StepsDefinition test
