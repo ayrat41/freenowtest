@@ -8,11 +8,10 @@ jobs:
     docker:
       - image: circleci/openjdk:8-jdk
 
-    working_directory: ~/testChallenge/comfreeNowapitest
+    working_directory: ~/comfreeNowapitest
     steps:
       - checkout
 
-      - run pwd
       # Download and cache dependencies
       - restore_cache:
           keys:
