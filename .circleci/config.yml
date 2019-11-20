@@ -8,7 +8,7 @@ jobs:
     docker:
       - image: circleci/openjdk:8-jdk
 
-    working_directory: ~/new-test
+    working_directory: ~/new-test/comfreeNowapitest
     steps:
       - checkout
 
@@ -17,14 +17,14 @@ jobs:
           keys:
           - new-test/comfreeNowapitest-{{ checksum "pom.xml" }}
           # fallback to using the latest cache if no exact match is found
-          - new-test 
+          - new-test/comfreeNowapitest
 
-      - run: cd /comfreeNowapitest; pwd; ls -la; mvn dependency:go-offline
+      - run: pwd; cd comfreeNowapitest; pwd; ls -la; mvn dependency:go-offline
 
       - save_cache:
           paths:
             - ~/new-test/.m2
-          key: new-test-{{ checksum "pom.xml" }}
+          key: new-test/comfreeNowapitest-{{ checksum "pom.xml" }}
 
 # run tests!
-      - run: mvn -Dtest=StepsDefinition test
+      - run: pwd; cd comfreeNowapitest; pwd; mvn -Dtest=StepsDefinition test
