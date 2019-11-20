@@ -19,11 +19,11 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - new-test 
 
-      - run: pwd; ls -la; cd /new-test; mvn dependency:go-offline
+      - run: cd /comfreeNowapitest; pwd; ls -la; mvn dependency:go-offline
 
       - save_cache:
           paths:
-            - ~/Users/aaibedul/.m2
+            - ~/new-test/.m2
           key: new-test-{{ checksum "pom.xml" }}
 
 # run tests!
