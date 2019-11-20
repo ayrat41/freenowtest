@@ -11,10 +11,6 @@ jobs:
     working_directory: ~testChallenge/comfreeNowapitest
     steps:
       - checkout
-          steps:
-      - checkout
-      - run: cd     steps:
-      - checkout
       - run: cd /Users/aaibedul/eclipse-workspace/testChallenge/comfreeNowapitest; ls -la; pwd;
 
       # Download and cache dependencies
