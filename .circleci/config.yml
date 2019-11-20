@@ -7,24 +7,25 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk:8-jdk
+    - run ls -la
 
-    working_directory: ~/
+    working_directory: ~/new-test
     steps:
       - checkout
 
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - comfreeNowapitest-{{ checksum "pom.xml" }}
+          - new-test-{{ checksum "pom.xml" }}
           # fallback to using the latest cache if no exact match is found
-          - comfreeNowapitest-
+          - new-test 
 
-      - run: pwd; ls -la; cd /comfreeNowapitest; mvn dependency:go-offline
+      - run: pwd; ls -la; cd /new-test; mvn dependency:go-offline
 
       - save_cache:
           paths:
             - ~/Users/aaibedul/.m2
-          key: comfreeNowapitest-{{ checksum "pom.xml" }}
+          key: new-test-{{ checksum "pom.xml" }}
 
 # run tests!
       - run: mvn -Dtest=StepsDefinition test
