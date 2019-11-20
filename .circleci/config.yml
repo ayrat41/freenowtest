@@ -7,7 +7,6 @@ jobs:
   build:
     docker:
       - image: circleci/openjdk:8-jdk
-    - run ls -la
 
     working_directory: ~/new-test
     steps:
