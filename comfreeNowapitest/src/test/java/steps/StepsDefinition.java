@@ -22,7 +22,6 @@ public class StepsDefinition extends Util {
         String endPointUri = url+api;
         System.out.println(endPointUri);
         String name = Util.prop.getProperty("name");
-        System.out.println(name);
         response = RestAssured.given().get(endPointUri);
         response.then().assertThat().statusCode(200);
         JsonPath jsonPathEvaluator = response.jsonPath();
@@ -30,7 +29,7 @@ public class StepsDefinition extends Util {
         List <String> userNames  = jsonPathEvaluator.getList("username");
         for (int i=0; i<userNames.size(); i++) {
             if (userNames.get(i).trim().equalsIgnoreCase(name)) {
-                System.out.println(userNames.get(i).trim());
+                System.out.println("Test emails in comments for user  ==> " + userNames.get(i).trim());
                 userId = jsonPathEvaluator.getInt("id["+i+"]");
                 break;
             }
@@ -59,7 +58,7 @@ public class StepsDefinition extends Util {
             }
         }
         if (status==0){
-            System.out.println("All emails for are valid");
+            System.out.println("ALL EMAILS ARE VALID");
         }
     }
 
