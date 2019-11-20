@@ -15,7 +15,7 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - new-test-{{ checksum "pom.xml" }}
+          - new-test/comfreeNowapitest-{{ checksum "pom.xml" }}
           # fallback to using the latest cache if no exact match is found
           - new-test 
 
