@@ -8,10 +8,9 @@ jobs:
     docker:
       - image: circleci/openjdk:8-jdk
 
-    working_directory: ~testChallenge/comfreeNowapitest
+    working_directory: ~/testChallenge/comfreeNowapitest
     steps:
       - checkout
-      - run: cd /Users/aaibedul/eclipse-workspace/testChallenge/comfreeNowapitest; ls -la; pwd;
 
       # Download and cache dependencies
       - restore_cache:
@@ -20,7 +19,7 @@ jobs:
           # fallback to using the latest cache if no exact match is found
           - comfreeNowapitest-
 
-      - run: cd /Users/aaibedul/eclipse-workspace/testChallenge/comfreeNowapitest; mvn dependency:go-offline
+      - run: cd /testChallenge/comfreeNowapitest; mvn dependency:go-offline
 
       - save_cache:
           paths:
