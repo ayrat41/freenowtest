@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="steps.StepsDefinition" duration-ms="1690" started-at="2019-11-20T05:07:25Z" finished-at="2019-11-20T05:07:27Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="1690" started-at="2019-11-20T05:07:25Z" finished-at="2019-11-20T05:07:27Z">
+      <class name="steps.StepsDefinition">
+        <test-method status="PASS" signature="find_userId_contains_username_use_to_the_next_scenario()[pri:0, instance:steps.StepsDefinition@19dfb72a]" name="find_userId_contains_username_use_to_the_next_scenario" duration-ms="1465" started-at="2019-11-20T05:07:25Z" finished-at="2019-11-20T05:07:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- find_userId_contains_username_use_to_the_next_scenario -->
+        <test-method status="PASS" signature="find_comments_contains_userId_check_emails()[pri:0, instance:steps.StepsDefinition@19dfb72a]" name="find_comments_contains_userId_check_emails" duration-ms="208" started-at="2019-11-20T05:07:27Z" depends-on-methods="steps.StepsDefinition.find_userId_contains_username_use_to_the_next_scenario" finished-at="2019-11-20T05:07:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- find_comments_contains_userId_check_emails -->
+      </class> <!-- steps.StepsDefinition -->
+    </test> <!-- Command line test -->
+  </suite> <!-- steps.StepsDefinition -->
+</testng-results>

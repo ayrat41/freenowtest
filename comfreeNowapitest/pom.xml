@@ -73,31 +73,6 @@
                     </dependency>
                 </dependencies>
             </plugin>
-            <plugin>
-                <groupId>net.masterthought</groupId>
-                <artifactId>maven-cucumber-reporting</artifactId>
-                <version>4.6.0</version>
-                <executions>
-                    <execution>
-                        <id>execution</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <projectName>ExecuteAutomation</projectName>
-                            <inputDirectory>${project.build.directory}/cucumber-reports</inputDirectory>
-                            <outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
-                            <jsonFiles>
-                                <!-- supports wildcard or name pattern -->
-                                <param>**/*.json</param>
-                            </jsonFiles>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
         </plugins>
     </build>
-
-
 </project>
